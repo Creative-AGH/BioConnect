@@ -28,7 +28,7 @@ public class Composter {
     private List<BioWaste> bioWastes = new ArrayList<>();
 
     @ElementCollection
-    private List<Double> placeCoordinates;
+    private List<Double> composterCoordinates;
 
     public Composter(String id, String name, String description) {
         this.id = id;
