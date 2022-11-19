@@ -24,7 +24,7 @@ public class BioWasteHistoryService {
     @Transactional
     public void addBioWasteHistory(String accountId, BioWaste bioWaste, String typeOfEvent, String commentToEvent) {
         log.info("Adding bioWaste history");
-        String bioWasteId = bioWaste.getId();
+        Long bioWasteId = bioWaste.getId();
 
         BioWasteHistory bioWasteHistory = new BioWasteHistory();
         bioWasteHistory.setBioWasteId(bioWasteId);

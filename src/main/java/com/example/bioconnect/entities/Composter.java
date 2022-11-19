@@ -16,10 +16,8 @@ import java.util.List;
 @Table(name = "composter")
 public class Composter {
     @Id
-    @NotNull
-    @NotEmpty
-    @Column(unique = true)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @NotNull
     @NotEmpty
     private String name;
@@ -35,11 +33,6 @@ public class Composter {
     @Min(0)
     private Double actualCapacity;
 
-    public Composter(String id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
 
     public List<BioWaste> getBioWastes() {
         return bioWastes;

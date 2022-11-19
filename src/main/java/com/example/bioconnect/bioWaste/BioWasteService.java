@@ -1,6 +1,7 @@
 package com.example.bioconnect.bioWaste;
 
 import com.example.bioconnect.Account;
+import com.example.bioconnect.AccountRepository;
 import com.example.bioconnect.RandomIdHandler;
 import com.example.bioconnect.bioWaste.dto.BioWasteMapper;
 import com.example.bioconnect.bioWaste.dto.FillBioWasteDto;
@@ -27,12 +28,11 @@ public class BioWasteService {
     private final RandomIdHandler randomIdHandler;
     private final BioWasteRepository bioWasteRepository;
     private final BioWasteHistoryService bioWasteHistoryService;
+    private final AccountRepository accountRepository;
 
     @Transactional
     public GetBioWasteDto addBioWaste(FillBioWasteDto fillBioWasteDto) {
         BioWaste bioWasteToSave = bioWasteMapper.mapFillBioWasteDtoToBioWaste(fillBioWasteDto);
-        String uuid = randomIdHandler.generateUniqueIdFromTable(bioWasteRepository);
-        bioWasteToSave.setId(uuid);
         bioWasteToSave.setDateOfCreation(LocalDateTime.now());
         BioWaste savedBioWaste = bioWasteRepository.save(bioWasteToSave);
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

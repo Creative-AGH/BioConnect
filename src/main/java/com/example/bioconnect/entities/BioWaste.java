@@ -17,10 +17,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class BioWaste {
     @Id
-    @NotNull
-    @NotEmpty
-    @Column(unique = true)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @NotNull
     @NotEmpty
     private String name;

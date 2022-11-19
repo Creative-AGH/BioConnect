@@ -21,8 +21,6 @@ public class ComposterService {
 
     public GetComposterDto addBioWaste(FillComposterDto fillComposterDto) {
         Composter composterToSave = composterMapper.mapFillComposterDtoToComposter(fillComposterDto);
-        String uuid = randomIdHandler.generateUniqueIdFromTable(composterRepository);
-        composterToSave.setId(uuid);
         Composter savedComposter = composterRepository.save(composterToSave);
 //        itemHistoryService.addItemHistory(savedItem.getId(), "Item created", "Creating an item (with detailsOfItemBeforeEvent data!)");
         log.info("Successfully created and saved composter");

@@ -23,7 +23,7 @@ public class BioWasteHistory {
 
     private LocalDateTime timeOfEvent;
 
-    private String bioWasteId;
+    private Long bioWasteId;
     private Double howMuchBioWaste;
     private String accountId;
 
