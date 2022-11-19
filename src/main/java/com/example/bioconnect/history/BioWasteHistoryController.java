@@ -1,17 +1,17 @@
 package com.example.bioconnect.history;
 
-import com.example.bioconnect.coposter.dto.GetComposterDto;
-import com.example.bioconnect.entities.BioWasteHistory;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin
 public class BioWasteHistoryController {
     private final BioWasteHistoryService bioWasteHistoryService;
 
