@@ -1,4 +1,4 @@
-package com.example.bioconnect;
+package com.example.bioconnect.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;

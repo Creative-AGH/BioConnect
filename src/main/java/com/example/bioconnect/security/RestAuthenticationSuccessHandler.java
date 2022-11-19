@@ -1,4 +1,4 @@
-package com.example.bioconnect;
+package com.example.bioconnect.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

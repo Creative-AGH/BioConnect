@@ -1,4 +1,4 @@
-package com.example.bioconnect;
+package com.example.bioconnect.security.login;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package com.example.bioconnect;
+package com.example.bioconnect.security.login;
 
 import com.example.bioconnect.Account;
 import com.example.bioconnect.AccountRepository;

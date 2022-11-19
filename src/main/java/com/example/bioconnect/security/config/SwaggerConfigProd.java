@@ -1,4 +1,4 @@
-package com.example.bioconnect;
+package com.example.bioconnect.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

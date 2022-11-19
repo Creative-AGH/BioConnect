@@ -1,6 +1,9 @@
-package com.example.bioconnect;
+package com.example.bioconnect.security;
 
 
+import com.example.bioconnect.Account;
+import com.example.bioconnect.Role;
+import com.example.bioconnect.security.login.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

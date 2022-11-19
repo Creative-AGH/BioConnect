@@ -1,4 +1,4 @@
-package com.example.bioconnect;
+package com.example.bioconnect.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
