@@ -1,10 +1,9 @@
 package com.example.bioconnect.register;
 
+import com.example.bioconnect.register.dto.RegisterNewAccountDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

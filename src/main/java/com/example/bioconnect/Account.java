@@ -25,6 +25,7 @@ public class Account {
         this.password = password;
         this.role = role;
     }
+    boolean isVerified;
 
     @OneToMany//(mappedBy = "item") //one item can have many of histories
     @JoinColumn(name="itemId") //it indicates a mapped column from Many side //foreign key in history table

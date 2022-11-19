@@ -1,7 +1,13 @@
 package com.example.bioconnect.register;
 
+import com.example.bioconnect.Account;
 import com.example.bioconnect.AccountRepository;
+import com.example.bioconnect.RandomIdHandler;
+import com.example.bioconnect.Role;
+import com.example.bioconnect.entities.TokenToRegister;
 import com.example.bioconnect.register.dto.RegisterMapper;
+import com.example.bioconnect.register.dto.RegisterNewAccountDto;
+import com.example.bioconnect.repositories.TokenToRegisterRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -45,7 +51,7 @@ public class RegisterService {
 
         } else {
             log.error("Account with such email {} already exist", newAccountEmail);
-            throw new AccountException(String.format("Account with such email %s already exist", newAccountEmail));
+            throw new RuntimeException(String.format("Account with such email %s already exist", newAccountEmail));
         }
     }
 
