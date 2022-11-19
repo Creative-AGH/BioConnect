@@ -7,5 +7,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring", uses = BioWasteHistory.class)
 public interface BioWasteHistoryMapper {
 
-    GetBioWasteHistoryDto mapItemHistoryToGetItemHistoryDto(BioWasteHistory bioWasteHistory);
+    GetBioWasteHistoryDto mapBioWasteHistoryToGetBioWasteHistoryDto(BioWasteHistory bioWasteHistory);
 }

@@ -7,7 +7,6 @@ import com.example.bioconnect.repositories.BioWasteRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -50,7 +49,7 @@ public class BioWasteHistoryService {
         List<BioWasteHistory> allBioWasteHistoryByAccountId = bioWasteHistoryRepository.findAllBioWasteHistoryByAccountId(accountId);
         ArrayList<GetBioWasteHistoryDto> getBioWasteHistoryDtoArrayList = new ArrayList<>();
         for (BioWasteHistory bioWasteHistory : allBioWasteHistoryByAccountId) {
-            getBioWasteHistoryDtoArrayList.add(bioWasteHistoryMapper.mapItemHistoryToGetItemHistoryDto(bioWasteHistory));
+            getBioWasteHistoryDtoArrayList.add(bioWasteHistoryMapper.mapBioWasteHistoryToGetBioWasteHistoryDto(bioWasteHistory));
         }
         return getBioWasteHistoryDtoArrayList;
     }
