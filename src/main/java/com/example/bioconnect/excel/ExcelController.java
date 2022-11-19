@@ -18,8 +18,8 @@ public class ExcelController {
 
     }
 
-//    @PostMapping("/admin/generateMultipleExcelReport/")
-//    public String generateReport() throws IOException {
-//        return excelService.reportWithAllItems();
-//    }
+    @PostMapping("/excel/wastePerUser")
+    public String generateReport() throws IOException {
+        return excelService.reportWithAllItems();
+    }
 }

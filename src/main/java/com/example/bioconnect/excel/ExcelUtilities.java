@@ -53,7 +53,7 @@ public class ExcelUtilities {
             headerCell.setCellValue(values[i]);
             headerCell.setCellStyle(headerStyles[i % headerStyles.length]);
         }
-        autoSizeColumnsInRange(sheet, 1, values.length);
+        autoSizeColumnsInRange(sheet, 0, values.length);
     }
 
     public void buildMainData(Row row, int cellIndex, String[] values, CellStyle... rowStyles) {

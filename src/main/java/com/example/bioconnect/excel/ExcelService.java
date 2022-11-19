@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
@@ -19,9 +20,9 @@ public class ExcelService {
         return encodeFileToBase64File(generateExcelForSingleAccountService.excelReportAboutSingleItem(itemId));
     }
 
-//    public String reportWithAllItems() throws IOException {
-//        return encodeFileToBase64File(allAvailableItemsService.excelReportAboutSingleItem());
-//    }
+    public String reportWithAllItems() throws IOException {
+        return encodeFileToBase64File(allAvailableItemsService.excelReportForOneMonth(LocalDate.now()));
+    }
 
     private String encodeFileToBase64File(File file) {
         try {
