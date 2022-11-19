@@ -20,7 +20,7 @@ public class ComposterController {
 
     private final ComposterService composterService;
     @ApiOperation(value = "Adding new bioWaste")
-    @PostMapping("/addBioWaste")
+    @PostMapping("/composter/add")
     public ResponseEntity<GetComposterDto> addComposter(@RequestBody FillComposterDto fillComposterDto) {
         GetComposterDto savedComposterDto = composterService.addBioWaste(fillComposterDto);
         URI savedItemUri = ServletUriComponentsBuilder.fromCurrentRequest()
