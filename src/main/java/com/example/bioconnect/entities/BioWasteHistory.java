@@ -17,16 +17,15 @@ public class BioWasteHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @Nullable
-    Account account;
     private String typeOfEvent;
     @Nullable
     private String commentToEvent;
 
     private LocalDateTime timeOfEvent;
 
-    String itemId;
+    private String bioWasteId;
+    private Double howMuchBioWaste;
+    private String accountId;
 
     public BioWasteHistory(Long id, String typeOfEvent, String detailsOfItem) {
         this.id = id;

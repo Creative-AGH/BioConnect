@@ -20,4 +20,5 @@ public class FillComposterDto {
     private final Double maximumCapacity;
     @Min(0)
     private final Double actualCapacity;
+
 }

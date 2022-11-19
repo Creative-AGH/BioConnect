@@ -1,8 +1,8 @@
-package com.example.bioconnect.api;
+package com.example.bioconnect.bioWaste;
 
 
-import com.example.bioconnect.bioWaste.FillBioWasteDto;
-import com.example.bioconnect.bioWaste.GetBioWasteDto;
+import com.example.bioconnect.bioWaste.dto.FillBioWasteDto;
+import com.example.bioconnect.bioWaste.dto.GetBioWasteDto;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

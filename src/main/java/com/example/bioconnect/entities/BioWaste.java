@@ -26,6 +26,8 @@ public class BioWaste {
     private String name;
     private String description;
 
+    private Double howMuchBioWaste;
+
     @ManyToOne
     @Nullable
     Account borrowedBy;

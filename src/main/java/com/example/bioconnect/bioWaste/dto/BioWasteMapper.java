@@ -1,4 +1,4 @@
-package com.example.bioconnect.bioWaste;
+package com.example.bioconnect.bioWaste.dto;
 
 import com.example.bioconnect.entities.BioWaste;
 import org.mapstruct.Mapper;

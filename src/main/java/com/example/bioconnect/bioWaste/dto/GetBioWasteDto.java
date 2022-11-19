@@ -1,4 +1,4 @@
-package com.example.bioconnect.bioWaste;
+package com.example.bioconnect.bioWaste.dto;
 
 import com.example.bioconnect.account.dto.GetAccountDto;
 import com.example.bioconnect.coposter.dto.GetComposterDto;
@@ -14,4 +14,5 @@ public class GetBioWasteDto {
     private LocalDateTime dateOfCreation;
     private GetComposterDto composterDto;
     private GetAccountDto borrowedBy;
+    private Double howMuchBioWaste;
 }

@@ -1,4 +1,4 @@
-package com.example.bioconnect.bioWaste;
+package com.example.bioconnect.bioWaste.dto;
 
 import lombok.Data;
 
@@ -17,4 +17,5 @@ public class FillBioWasteDto {
     private String description;
     //@Enumerated(EnumType.STRING) //it is not necessary because we do that in other way (class StatusOfItemConverter)
     private String composterId;
+    private Double howMuchBioWaste;
 }
