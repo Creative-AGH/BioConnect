@@ -5,6 +5,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Repository
 public interface BioWasteHistoryRepository extends CrudRepository<BioWasteHistory, Long> {
 
@@ -16,4 +19,10 @@ public interface BioWasteHistoryRepository extends CrudRepository<BioWasteHistor
             """,
             nativeQuery = true)
     double getSumOfBioWasteInSpecifiedTime(String fromDate, String toDate);
+
+    @Query(value = "SELECT bioWasteHistory " +
+            "FROM BioWasteHistory bioWasteHistory " +
+            "WHERE bioWasteHistory.accountId = :accountId")
+    List<BioWasteHistory> findAllBioWasteHistoryByAccountId(String accountId);
+
 }

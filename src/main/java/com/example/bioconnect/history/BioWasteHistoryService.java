@@ -7,10 +7,13 @@ import com.example.bioconnect.repositories.BioWasteRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Data
@@ -20,6 +23,7 @@ public class BioWasteHistoryService {
 
     private final BioWasteRepository bioWasteRepository;
     private final BioWasteHistoryRepository bioWasteHistoryRepository;
+    private final BioWasteHistoryMapper bioWasteHistoryMapper;
 
     @Transactional
     public void addBioWasteHistory(String accountId, BioWaste bioWaste, String typeOfEvent, String commentToEvent) {
@@ -40,5 +44,14 @@ public class BioWasteHistoryService {
 
     public double getSumOfBioWasteInSpecifiedTime(String fromDate, String toDate) {
         return bioWasteHistoryRepository.getSumOfBioWasteInSpecifiedTime(fromDate, toDate);
+    }
+
+    public List<GetBioWasteHistoryDto> getHistoryOfBioWasteForAccountId(String accountId) {
+        List<BioWasteHistory> allBioWasteHistoryByAccountId = bioWasteHistoryRepository.findAllBioWasteHistoryByAccountId(accountId);
+        ArrayList<GetBioWasteHistoryDto> getBioWasteHistoryDtoArrayList = new ArrayList<>();
+        for (BioWasteHistory bioWasteHistory : allBioWasteHistoryByAccountId) {
+            getBioWasteHistoryDtoArrayList.add(bioWasteHistoryMapper.mapItemHistoryToGetItemHistoryDto(bioWasteHistory));
+        }
+        return getBioWasteHistoryDtoArrayList;
     }
 }
