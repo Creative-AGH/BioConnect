@@ -37,4 +37,8 @@ public class BioWasteHistoryService {
         bioWasteHistoryRepository.save(bioWasteHistory);
         log.info("Successfully added item history");
     }
+
+    public double getSumOfBioWasteInSpecifiedTime(String fromDate, String toDate) {
+        return bioWasteHistoryRepository.getSumOfBioWasteInSpecifiedTime(fromDate, toDate);
+    }
 }
