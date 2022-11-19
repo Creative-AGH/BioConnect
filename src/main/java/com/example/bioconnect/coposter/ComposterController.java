@@ -18,8 +18,7 @@ import java.net.URI;
 public class ComposterController {
 
     private final ComposterService composterService;
-
-    @ApiOperation(value = "Adding new bioWaste")
+    @ApiOperation(value = "Adding new composter")
     @PostMapping("/composter/add")
     public ResponseEntity<GetComposterDto> addComposter(@RequestBody @Valid FillComposterDto fillComposterDto) {
         GetComposterDto savedComposterDto = composterService.addBioWaste(fillComposterDto);
