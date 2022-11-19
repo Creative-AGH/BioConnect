@@ -1,18 +1,15 @@
 package com.example.bioconnect.bioWaste;
 
-import com.example.bioconnect.Account;
 import com.example.bioconnect.AccountRepository;
 import com.example.bioconnect.RandomIdHandler;
 import com.example.bioconnect.bioWaste.dto.BioWasteMapper;
 import com.example.bioconnect.bioWaste.dto.FillBioWasteDto;
 import com.example.bioconnect.bioWaste.dto.GetBioWasteDto;
 import com.example.bioconnect.entities.BioWaste;
-import com.example.bioconnect.entities.BioWasteHistory;
 import com.example.bioconnect.history.BioWasteHistoryService;
 import com.example.bioconnect.repositories.BioWasteRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.annotation.CurrentSecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;

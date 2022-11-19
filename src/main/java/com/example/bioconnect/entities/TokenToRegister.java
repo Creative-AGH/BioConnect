@@ -1,6 +1,5 @@
 package com.example.bioconnect.entities;
 
-import com.example.bioconnect.Account;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

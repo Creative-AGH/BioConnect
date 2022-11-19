@@ -1,6 +1,6 @@
 package com.example.bioconnect.register.dto;
 
-import com.example.bioconnect.Account;
+import com.example.bioconnect.entities.Account;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

@@ -1,5 +1,6 @@
 package com.example.bioconnect;
 
+import com.example.bioconnect.entities.Account;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

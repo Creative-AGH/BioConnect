@@ -1,6 +1,5 @@
 package com.example.bioconnect.entities;
 
-import com.example.bioconnect.Account;
 import com.sun.istack.Nullable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,13 +27,13 @@ public class BioWaste {
 
     @ManyToOne
     @Nullable
-    Account borrowedBy;
+    Account account;
 
     @PastOrPresent
     private LocalDateTime dateOfCreation;
 
     @ManyToOne
-    @JoinColumn(name = "place_id")
+    @JoinColumn(name = "composter_id")
     Composter composter;
 
 }
