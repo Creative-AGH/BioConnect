@@ -19,7 +19,7 @@ public class BioWasteController {
     private final BioWasteService bioWasteService;
 
     @ApiOperation(value = "Adding new bioWaste")
-    @PostMapping("/addBioWaste")
+    @PostMapping("/biowaste/add")
     public ResponseEntity<GetBioWasteDto> addBioWaste(@RequestBody FillBioWasteDto fillBioWasteDto) {
         GetBioWasteDto savedBioWaste = bioWasteService.addBioWaste(fillBioWasteDto);
         URI savedItemUri = ServletUriComponentsBuilder.fromCurrentRequest()
