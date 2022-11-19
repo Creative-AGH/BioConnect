@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -20,7 +21,7 @@ public class BioWasteController {
 
     @ApiOperation(value = "Adding new bioWaste")
     @PostMapping("/biowaste/add")
-    public ResponseEntity<GetBioWasteDto> addBioWaste(@RequestBody FillBioWasteDto fillBioWasteDto) {
+    public ResponseEntity<GetBioWasteDto> addBioWaste(@RequestBody @Valid FillBioWasteDto fillBioWasteDto) {
         GetBioWasteDto savedBioWaste = bioWasteService.addBioWaste(fillBioWasteDto);
         URI savedItemUri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")

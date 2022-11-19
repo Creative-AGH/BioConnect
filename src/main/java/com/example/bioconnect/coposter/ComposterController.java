@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -19,9 +20,9 @@ import java.net.URI;
 public class ComposterController {
 
     private final ComposterService composterService;
-    @ApiOperation(value = "Adding new bioWaste")
+    @ApiOperation(value = "Adding new composter")
     @PostMapping("/composter/add")
-    public ResponseEntity<GetComposterDto> addComposter(@RequestBody FillComposterDto fillComposterDto) {
+    public ResponseEntity<GetComposterDto> addComposter(@RequestBody @Valid FillComposterDto fillComposterDto) {
         GetComposterDto savedComposterDto = composterService.addBioWaste(fillComposterDto);
         URI savedItemUri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")

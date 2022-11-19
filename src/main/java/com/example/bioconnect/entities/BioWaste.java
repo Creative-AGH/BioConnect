@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "item")
+@Table(name = "bio_waste")
 @NoArgsConstructor
 public class BioWaste {
     @Id
