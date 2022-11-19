@@ -1,6 +1,6 @@
 package com.example.bioconnect.security.login;
 
-import com.example.bioconnect.Account;
+import com.example.bioconnect.entities.Account;
 import com.example.bioconnect.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

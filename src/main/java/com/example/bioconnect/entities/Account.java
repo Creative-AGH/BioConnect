@@ -1,5 +1,6 @@
-package com.example.bioconnect;
+package com.example.bioconnect.entities;
 
+import com.example.bioconnect.Role;
 import com.example.bioconnect.entities.BioWasteHistory;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,9 +26,10 @@ public class Account {
         this.password = password;
         this.role = role;
     }
+    boolean isVerified;
 
     @OneToMany//(mappedBy = "item") //one item can have many of histories
-    @JoinColumn(name="itemId") //it indicates a mapped column from Many side //foreign key in history table
+//    @JoinColumn(name="itemId") //it indicates a mapped column from Many side //foreign key in history table
     List<BioWasteHistory> history = new ArrayList<>(); //FIXME we dont know if we do that with aspect concept of programming
 
     public List<BioWasteHistory> getHistory() {

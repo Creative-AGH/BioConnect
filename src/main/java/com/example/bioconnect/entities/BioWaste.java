@@ -1,6 +1,5 @@
 package com.example.bioconnect.entities;
 
-import com.example.bioconnect.Account;
 import com.sun.istack.Nullable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,28 +12,28 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "item")
+@Table(name = "bio_waste")
 @NoArgsConstructor
 public class BioWaste {
     @Id
-    @NotNull
-    @NotEmpty
-    @Column(unique = true)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @NotNull
     @NotEmpty
     private String name;
     private String description;
 
+    private Double howMuchBioWaste;
+
     @ManyToOne
     @Nullable
-    Account borrowedBy;
+    Account account;
 
     @PastOrPresent
     private LocalDateTime dateOfCreation;
 
     @ManyToOne
-    @JoinColumn(name = "place_id")
+    @JoinColumn(name = "composter_id")
     Composter composter;
 
 }

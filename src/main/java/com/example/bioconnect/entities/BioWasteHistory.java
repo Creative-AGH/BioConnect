@@ -1,12 +1,13 @@
 package com.example.bioconnect.entities;
 
-import com.example.bioconnect.Account;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.Nullable;
 
-import javax.persistence.*;
-import javax.validation.constraints.Size;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,24 +18,18 @@ public class BioWasteHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @Nullable
-    Account account;
     private String typeOfEvent;
     @Nullable
     private String commentToEvent;
 
     private LocalDateTime timeOfEvent;
 
-    String itemId;
-
-    @Column(length = 1023)
-    @Size(max = 1023, message = "String detailsOfItem is to long")
-    String detailsOfItemBeforeEvent;
+    private Long bioWasteId;
+    private Double howMuchBioWaste;
+    private String accountId;
 
     public BioWasteHistory(Long id, String typeOfEvent, String detailsOfItem) {
         this.id = id;
         this.typeOfEvent = typeOfEvent;
-        this.detailsOfItemBeforeEvent = detailsOfItem;
     }
 }
