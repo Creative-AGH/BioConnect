@@ -28,13 +28,8 @@ public class BioWasteHistory {
 
     String itemId;
 
-    @Column(length = 1023)
-    @Size(max = 1023, message = "String detailsOfItem is to long")
-    String detailsOfItemBeforeEvent;
-
     public BioWasteHistory(Long id, String typeOfEvent, String detailsOfItem) {
         this.id = id;
         this.typeOfEvent = typeOfEvent;
-        this.detailsOfItemBeforeEvent = detailsOfItem;
     }
 }
