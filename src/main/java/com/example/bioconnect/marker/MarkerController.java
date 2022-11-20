@@ -40,5 +40,17 @@ public class MarkerController {
         return ResponseEntity.ok(markerOutputDto);
     }
 
+    @ApiOperation(value = "Deleting marker")
+    @DeleteMapping("marker/id")
+    public ResponseEntity<?> deleteBioWaste(@RequestParam Long id){
+        return ResponseEntity.noContent().build();
+    }
+
+    @ApiOperation(value = "Updating marker")
+    @PutMapping("marker/id")
+    public ResponseEntity<?> updateMarker(@RequestParam Long id){
+        return ResponseEntity.noContent().build();
+    }
+
 
 }

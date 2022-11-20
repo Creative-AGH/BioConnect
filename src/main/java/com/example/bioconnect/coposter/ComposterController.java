@@ -41,4 +41,16 @@ public class ComposterController {
         List<GetComposterDto> getCompostersDto = composterService.getAllComposters();
         return ResponseEntity.ok(getCompostersDto);
     }
+
+    @ApiOperation(value = "Deleting composter")
+    @DeleteMapping("composter/id")
+    public ResponseEntity<?> deleteComposter(@RequestParam Long id){
+        return ResponseEntity.noContent().build();
+    }
+
+    @ApiOperation(value = "Updating composter")
+    @PutMapping("composter/id")
+    public ResponseEntity<?> updateComposter(@RequestParam Long id){
+        return ResponseEntity.noContent().build();
+    }
 }
