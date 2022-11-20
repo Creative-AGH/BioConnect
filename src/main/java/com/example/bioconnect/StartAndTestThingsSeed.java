@@ -1,15 +1,14 @@
 package com.example.bioconnect;
 
-import com.example.bioconnect.entities.Account;
-import com.example.bioconnect.entities.BioWaste;
-import com.example.bioconnect.entities.Composter;
-import com.example.bioconnect.entities.Role;
+import com.example.bioconnect.entities.*;
 import com.example.bioconnect.repositories.BioWasteRepository;
 import com.example.bioconnect.repositories.ComposterRepository;
+import com.example.bioconnect.repositories.MarkerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Component
@@ -19,12 +18,23 @@ public class StartAndTestThingsSeed {
     private final AccountRepository accountRepository;
     private final BioWasteRepository bioWasteRepository;
     private final ComposterRepository composterRepository;
+    private final MarkerRepository markerRepository;
 
 
     public void fillData() {
         createTestAccount();
         createTestComposter();
         createTestBioWaste();
+        createTestMarker();
+    }
+
+    private void createTestMarker() {
+        if(markerRepository.count() == 0){
+            markerRepository.save(new Marker("desc", CategoryOfWaste.GRASS,
+                    200.0,accountRepository.findByEmail("adam"), LocalDate.now(), 5.0, 7.0));
+            markerRepository.save(new Marker("desc2", CategoryOfWaste.HASH,
+                    430.0,accountRepository.findByEmail("adam"), LocalDate.now(), 9.0, 2.0));
+        }
     }
 
     private void createTestBioWaste() {

@@ -29,6 +29,16 @@ public class Marker {
     // KATEGORIA
 
 
+    public Marker(String description, CategoryOfWaste categoryOfWaste, Double howMuchBioWaste, Account account, LocalDate dateOfCreate, Double x, Double y) {
+        this.description = description;
+        this.categoryOfWaste = categoryOfWaste;
+        this.howMuchBioWaste = howMuchBioWaste;
+        this.account = account;
+        this.dateOfCreate = dateOfCreate;
+        this.x = x;
+        this.y = y;
+    }
+
     private Double x;//POZYCJE
     private Double y;
 
