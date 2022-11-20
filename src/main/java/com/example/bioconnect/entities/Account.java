@@ -32,6 +32,12 @@ public class Account {
         this.availableCash = availableCash;
     }
 
+    public Account(String email, String password, boolean isVerified) {
+        this.email = email;
+        this.password = password;
+        this.isVerified = isVerified;
+    }
+
     public Account(String email, String password, Role role) {
         this.email = email;
         this.password = password;
