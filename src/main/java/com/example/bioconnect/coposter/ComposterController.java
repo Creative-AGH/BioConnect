@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin("*")
 public class ComposterController {
 
     private final ComposterService composterService;

@@ -9,7 +9,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin("*")
 public class RegisterController {
     private final RegisterService registerService;
 
@@ -19,7 +19,7 @@ public class RegisterController {
         return ResponseEntity.noContent().build(); //TODO change to ok status with a body
     }
     @GetMapping("/all/validate")
-    public ResponseEntity<Boolean> verifyEmail(String token) {
+    public ResponseEntity<Boolean> verifyEmail(@RequestParam String token) {
         boolean response = registerService.verifyEmail(token);
         if (!response)
             return ResponseEntity.notFound().build();
