@@ -15,8 +15,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class MarkerController {
-    //pobranie wszystkich pinesek ( i jednej z detailsami )
-    //dodanie , usunięcie
     private final MarkerService markerService;
 
     @ApiOperation(value = "Adding new marker")
@@ -31,13 +29,15 @@ public class MarkerController {
     }
 
     @GetMapping("/marker/all")
-    private List<MarkerOutputDto> getAllMarkers() {
-        return null;
+    private ResponseEntity<List<MarkerOutputDto>> getAllMarkers() {
+        List<MarkerOutputDto> markerOutputDtoList = markerService.getAllMarkers();
+        return ResponseEntity.ok(markerOutputDtoList);
     }
 
     @GetMapping("/marker/{id}")
-    private MarkerOutputDto getMarker(@RequestParam Long id) {
-        return null;
+    private ResponseEntity<MarkerOutputDto> getMarkerById(@RequestParam Long id) {
+        MarkerOutputDto markerOutputDto = markerService.getMarkerById(id);
+        return ResponseEntity.ok(markerOutputDto);
     }
 
 

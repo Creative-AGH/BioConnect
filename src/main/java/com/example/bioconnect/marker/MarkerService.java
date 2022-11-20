@@ -11,6 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -26,4 +30,19 @@ public class MarkerService {
         return markerMapper.mapMarkerToMarkerOutputDto(savedMarker);
     }
 
+    public MarkerOutputDto getMarkerById(Long id) {
+        Optional<Marker> optionalMarker = markerRepository.findById(id);
+        if(optionalMarker.isEmpty()){
+            throw new RuntimeException("Marker with id: " + id + "does not exist");
+        }
+        return markerMapper.mapMarkerToMarkerOutputDto(optionalMarker.get());
+    }
+
+    public List<MarkerOutputDto> getAllMarkers() {
+        List<MarkerOutputDto> markerOutputDtoList = new ArrayList<>();
+        for (Marker marker : markerRepository.findAll()) {
+            markerOutputDtoList.add(markerMapper.mapMarkerToMarkerOutputDto(marker));
+        }
+        return markerOutputDtoList;
+    }
 }
