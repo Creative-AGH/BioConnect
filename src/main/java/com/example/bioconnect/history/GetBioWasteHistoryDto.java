@@ -1,5 +1,6 @@
 package com.example.bioconnect.history;
 
+import com.example.bioconnect.account.dto.GetAccountDto;
 import lombok.Data;
 
 import java.time.LocalDateTime;
