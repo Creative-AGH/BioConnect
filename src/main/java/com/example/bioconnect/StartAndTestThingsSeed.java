@@ -3,10 +3,8 @@ package com.example.bioconnect;
 import com.example.bioconnect.entities.Account;
 import com.example.bioconnect.entities.BioWaste;
 import com.example.bioconnect.entities.Composter;
-import com.example.bioconnect.repositories.BioWasteHistoryRepository;
 import com.example.bioconnect.repositories.BioWasteRepository;
 import com.example.bioconnect.repositories.ComposterRepository;
-import com.example.bioconnect.repositories.TokenToRegisterRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -48,16 +46,16 @@ public class StartAndTestThingsSeed {
 
     private void createTestAccount() {
         if (accountRepository.count() == 0) {
-            Account adam = new Account("adam", passwordEncoder.encode("123"), true);
+            Account adam = new Account("adam", passwordEncoder.encode("123"), true, 8000);
             adam.setRole(Role.ADMIN);
             accountRepository.save(adam);
-            Account admin = new Account("admin@gmail.com", passwordEncoder.encode("admin"), true);
+            Account admin = new Account("admin@gmail.com", passwordEncoder.encode("admin"), true, 200);
             admin.setRole(Role.ADMIN);
             accountRepository.save(admin);
-            Account moderator = new Account("moderator@gmial.com", passwordEncoder.encode("mod"), true);
+            Account moderator = new Account("moderator@gmial.com", passwordEncoder.encode("mod"), true, 50);
             moderator.setRole(Role.MODERATOR);
             accountRepository.save(moderator);
-            Account user = new Account("user@gmial.com", passwordEncoder.encode("user"), true);
+            Account user = new Account("user@gmial.com", passwordEncoder.encode("user"), true, 3000);
             user.setRole(Role.USER);
             accountRepository.save(user);
         }
