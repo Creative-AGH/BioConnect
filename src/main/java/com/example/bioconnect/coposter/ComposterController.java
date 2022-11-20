@@ -18,10 +18,11 @@ import java.util.List;
 public class ComposterController {
 
     private final ComposterService composterService;
+
     @ApiOperation(value = "Adding new composter")
     @PostMapping("/composter/add")
     public ResponseEntity<GetComposterDto> addComposter(@RequestBody @Valid FillComposterDto fillComposterDto) {
-        GetComposterDto savedComposterDto = composterService.addBioWaste(fillComposterDto);
+        GetComposterDto savedComposterDto = composterService.addComposter(fillComposterDto);
         URI savedItemUri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(savedComposterDto.getId())

@@ -22,6 +22,15 @@ public class Account {
     @Enumerated
     private Role role;
 
+    private double availableCash;
+
+    public Account(String email, String password, boolean isVerified, double availableCash) {
+        this.email = email;
+        this.password = password;
+        this.isVerified = isVerified;
+        this.availableCash = availableCash;
+    }
+
     public Account(String email, String password, boolean isVerified) {
         this.email = email;
         this.password = password;
