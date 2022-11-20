@@ -11,7 +11,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.time.LocalDateTime;
 
 @RestController
 @RequiredArgsConstructor
@@ -30,5 +29,17 @@ public class BioWasteController {
         return ResponseEntity.created(savedItemUri).body(savedBioWaste);
     }
 
+    @ApiOperation(value = "Deleting bioWaste")
+    @DeleteMapping("biowaste/id")
+    public ResponseEntity<?> deleteBioWaste(@RequestParam Long id){
+        return ResponseEntity.noContent().build();
+    }
+
+
+    @ApiOperation(value = "Updating bioWaste")
+    @PutMapping("biowaste/id")
+    public ResponseEntity<?> updateBioWaste(@RequestParam Long id){
+        return ResponseEntity.noContent().build();
+    }
 
 }

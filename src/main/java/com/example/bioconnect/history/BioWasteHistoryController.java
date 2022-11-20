@@ -1,13 +1,10 @@
 package com.example.bioconnect.history;
 
-import com.example.bioconnect.coposter.dto.GetComposterDto;
-import com.example.bioconnect.entities.BioWasteHistory;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -26,5 +23,18 @@ public class BioWasteHistoryController {
     @GetMapping("/biowasteHistory/getHistoryOfBioWasteForAccountId/{accountId}")
     public List<GetBioWasteHistoryDto> getHistoryOfBioWasteForAccountId(@RequestParam String accountId) {
         return bioWasteHistoryService.getHistoryOfBioWasteForAccountId(accountId);
+    }
+
+
+    @ApiOperation(value = "Deleting bioWasteHistory")
+    @DeleteMapping("biowasteHistory/id")
+    public ResponseEntity<?> deleteBioWaste(@RequestParam Long id){
+        return ResponseEntity.noContent().build();
+    }
+
+    @ApiOperation(value = "Updating bioWasteHistory")
+    @PutMapping("bioWasteHistory/id")
+    public ResponseEntity<?> updateBioWasteHistory(@RequestParam Long id){
+        return ResponseEntity.noContent().build();
     }
 }
