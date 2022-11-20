@@ -36,4 +36,11 @@ public class BioWaste {
     @JoinColumn(name = "composter_id")
     Composter composter;
 
+    public BioWaste(Long id, String name, String description, Double howMuchBioWaste, LocalDateTime dateOfCreation) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.howMuchBioWaste = howMuchBioWaste;
+        this.dateOfCreation = dateOfCreation;
+    }
 }

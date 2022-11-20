@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class BioWasteHistoryController {
     private final BioWasteHistoryService bioWasteHistoryService;
 

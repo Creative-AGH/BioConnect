@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class BioWasteController {
     private final BioWasteService bioWasteService;
 
