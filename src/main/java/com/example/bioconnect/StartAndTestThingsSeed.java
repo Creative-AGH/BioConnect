@@ -30,10 +30,18 @@ public class StartAndTestThingsSeed {
 
     private void createTestMarker() {
         if(markerRepository.count() == 0){
-            markerRepository.save(new Marker("desc", CategoryOfWaste.GRASS,
-                    200.0,accountRepository.findByEmail("adam"), LocalDate.now(), 5.0, 7.0));
-            markerRepository.save(new Marker("desc2", CategoryOfWaste.HASH,
-                    430.0,accountRepository.findByEmail("adam"), LocalDate.now(), 9.0, 2.0));
+            markerRepository.save(new Marker("Trawa po koszeniu przydomowego trawnika", CategoryOfWaste.GRASS,
+                    80.0,accountRepository.findByEmail("adam"), LocalDate.now(), 5.0, 7.0));
+            markerRepository.save(new Marker("Gałęzie po przycięciu drzew", CategoryOfWaste.HASH,
+                    34.0,accountRepository.findByEmail("adam"), LocalDate.now(), 9.0, 2.0));
+            markerRepository.save(new Marker("Gałęzie po przycięciu drzew", CategoryOfWaste.HASH,
+                    65.0,accountRepository.findByEmail("adam"), LocalDate.now(), 19.0, 50.0));
+            markerRepository.save(new Marker("Drewno po ścięciu drzewa", CategoryOfWaste.WOOD,
+                    12.0,accountRepository.findByEmail("adam"), LocalDate.now(), 18.0, 51.0));
+            markerRepository.save(new Marker("Gałęzie po przycięciu krzewów", CategoryOfWaste.HASH,
+                    44.0,accountRepository.findByEmail("adam"), LocalDate.now(), 16.0, 55.0));
+            markerRepository.save(new Marker("Skoszona trawa", CategoryOfWaste.GRASS,
+                    19.0,accountRepository.findByEmail("adam"), LocalDate.now(), 23.0, 47.0));
         }
     }
 
