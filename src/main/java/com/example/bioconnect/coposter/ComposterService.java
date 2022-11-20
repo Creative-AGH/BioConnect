@@ -1,6 +1,5 @@
 package com.example.bioconnect.coposter;
 
-import com.example.bioconnect.RandomIdHandler;
 import com.example.bioconnect.coposter.dto.ComposterMapper;
 import com.example.bioconnect.coposter.dto.FillComposterDto;
 import com.example.bioconnect.coposter.dto.GetComposterDto;
@@ -9,6 +8,7 @@ import com.example.bioconnect.repositories.ComposterRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +20,10 @@ import java.util.Optional;
 public class ComposterService {
 
     private final ComposterMapper composterMapper;
-    private final RandomIdHandler randomIdHandler;
     private final ComposterRepository composterRepository;
 
-    public GetComposterDto addBioWaste(FillComposterDto fillComposterDto) {
+    @Transactional
+    public GetComposterDto addComposter(FillComposterDto fillComposterDto) {
         Composter composterToSave = composterMapper.mapFillComposterDtoToComposter(fillComposterDto);
         Composter savedComposter = composterRepository.save(composterToSave);
 //        itemHistoryService.addItemHistory(savedItem.getId(), "Item created", "Creating an item (with detailsOfItemBeforeEvent data!)");
@@ -49,5 +49,20 @@ public class ComposterService {
             listGetComposterDto.add(composterMapper.mapComposterToGetComposterDto(composter));
         }
         return listGetComposterDto;
+    }
+
+    @Transactional
+    public void addBioWasteToComposter(Long composterId, double howMuchBioWasteToAdd) {
+        Optional<Composter> optionalComposter = composterRepository.findById(composterId);
+        if (optionalComposter.isPresent()) {
+            Composter composter = optionalComposter.get();
+            if (composter.getActualCapacity() + howMuchBioWasteToAdd > composter.getMaximumCapacity()) {
+                throw new RuntimeException("The maximum capacity of this composter is: " + composter.getMaximumCapacity());
+            }
+            composter.setActualCapacity(composter.getActualCapacity() + howMuchBioWasteToAdd);
+            composterRepository.save(composter);
+        } else {
+            throw new RuntimeException("There is no such composter with id: " + composterId);
+        }
     }
 }
