@@ -3,7 +3,7 @@ package com.example.bioconnect.register;
 import com.example.bioconnect.entities.Account;
 import com.example.bioconnect.AccountRepository;
 import com.example.bioconnect.RandomIdHandler;
-import com.example.bioconnect.Role;
+import com.example.bioconnect.entities.Role;
 import com.example.bioconnect.entities.TokenToRegister;
 import com.example.bioconnect.register.dto.RegisterMapper;
 import com.example.bioconnect.register.dto.RegisterNewAccountDto;

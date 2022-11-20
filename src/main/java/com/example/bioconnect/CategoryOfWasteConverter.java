@@ -1,15 +1,16 @@
 package com.example.bioconnect;
 
-import com.example.bioconnect.entities.Role;
+import com.example.bioconnect.entities.CategoryOfWaste;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-public class RoleConverter implements AttributeConverter<Role,String> {
+public class CategoryOfWasteConverter implements AttributeConverter<CategoryOfWaste, String> {
+
     @Override
-    public String convertToDatabaseColumn(Role role) {
+    public String convertToDatabaseColumn(CategoryOfWaste role) {
         if (role == null) {
             return null;
         }
@@ -17,15 +18,15 @@ public class RoleConverter implements AttributeConverter<Role,String> {
     }
 
     @Override
-    public Role convertToEntityAttribute(String code) {
+    public CategoryOfWaste convertToEntityAttribute(String code) {
         if (code == null) {
             return null;
         }
 
-        return Stream.of(Role.values())
+        return Stream.of(CategoryOfWaste.values())
                 .filter(c -> c.getCode().equals(code))
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);
     }
-}
 
+}

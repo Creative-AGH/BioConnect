@@ -2,7 +2,7 @@ package com.example.bioconnect.security;
 
 
 import com.example.bioconnect.entities.Account;
-import com.example.bioconnect.Role;
+import com.example.bioconnect.entities.Role;
 import com.example.bioconnect.security.login.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.User;

@@ -1,4 +1,4 @@
-package com.example.bioconnect;
+package com.example.bioconnect.entities;
 
 
 public enum Role {
