@@ -1,5 +1,6 @@
 package com.example.bioconnect.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "composter")
+@AllArgsConstructor
 public class Composter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,8 +35,13 @@ public class Composter {
     @Min(0)
     private Double actualCapacity;
 
-
-    public List<BioWaste> getBioWastes() {
-        return bioWastes;
+    public Composter(Long id, String name, String description, Double x, Double y, Double maximumCapacity, Double actualCapacity) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.x = x;
+        this.y = y;
+        this.maximumCapacity = maximumCapacity;
+        this.actualCapacity = actualCapacity;
     }
 }
