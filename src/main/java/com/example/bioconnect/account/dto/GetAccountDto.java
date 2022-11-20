@@ -7,4 +7,5 @@ public class GetAccountDto {
     private String email;
     private String name;
     private String surname;
+    private Double availableCash;
 }
