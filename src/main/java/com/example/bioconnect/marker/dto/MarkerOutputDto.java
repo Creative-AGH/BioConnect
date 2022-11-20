@@ -1,4 +1,4 @@
-package com.example.bioconnect.Marker.dto;
+package com.example.bioconnect.marker.dto;
 
 import com.example.bioconnect.entities.CategoryOfWaste;
 import lombok.Data;
@@ -9,19 +9,15 @@ import java.time.LocalDate;
 public class MarkerOutputDto {
     Long id;
     String description;
-    //TYP
+
     CategoryOfWaste categoryOfWaste;
     Double howMuchBioWaste;
 
 
-    Long accountId;
-
-    //ACCOUNT
+    String accountId;
     LocalDate dateOfCreate;
-    // DATA
-    // KATEGORIA
 
 
-    private Double x;//POZYCJE
+    private Double x;
     private Double y;
 }

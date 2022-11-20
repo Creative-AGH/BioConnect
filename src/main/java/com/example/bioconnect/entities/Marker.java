@@ -1,11 +1,16 @@
 package com.example.bioconnect.entities;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@NoArgsConstructor
+@Setter
+@Getter
 public class Marker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +20,7 @@ public class Marker {
     CategoryOfWaste categoryOfWaste;
     Double howMuchBioWaste;
 
-    @OneToMany
+    @ManyToOne
     Account account;
 
     //ACCOUNT

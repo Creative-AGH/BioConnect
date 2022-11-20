@@ -3,6 +3,7 @@ package com.example.bioconnect;
 import com.example.bioconnect.entities.Account;
 import com.example.bioconnect.entities.BioWaste;
 import com.example.bioconnect.entities.Composter;
+import com.example.bioconnect.entities.Role;
 import com.example.bioconnect.repositories.BioWasteRepository;
 import com.example.bioconnect.repositories.ComposterRepository;
 import lombok.RequiredArgsConstructor;
