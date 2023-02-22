@@ -56,14 +56,14 @@ Inside it, there are <b>features</b> such as:
 > - Application log logging to files depending on the profile.
 ## Current project authors are:
 ### Server Side - backend:
-- Adam Wasylewicz - https://www.linkedin.com/in/adam-wasylewicz-57a990238/
-- Patryk Janas - https://www.linkedin.com/in/patrykjanas27/
+- [Adam Wasylewicz](https://github.com/adwas3213) - https://www.linkedin.com/in/adam-wasylewicz-57a990238/
+- [Patryk Janas](https://github.com/PatrykJanas27) - https://www.linkedin.com/in/patrykjanas27/
 ### Client Side - frontend and UI/UX:
-- Przemysław Matraj - https://www.linkedin.com/in/przemyslawmatraj/
-- Lidia Moryc - https://www.linkedin.com/in/lidia-moryc-7635b2263/
-- Mateusz Majka - https://www.linkedin.com/in/mateusz-majka-473919196/
+- [Przemysław Matraj](https://github.com/przemyslawmatraj) - https://www.linkedin.com/in/przemyslawmatraj/
+- [Karolina Kowalska] - https://www.linkedin.com/in/karolina-kowalska-82aa01202/
+- [Mateusz Majka](https://github.com/Reckit075) - https://www.linkedin.com/in/mateusz-majka-473919196/
 ### DevOps:
-- Mariusz Wermiński - https://www.linkedin.com/in/mwerminski/
+- [Mariusz Wermiński] - https://www.linkedin.com/in/mwerminski/
 
 ![](https://i.imgur.com/VviOmoZ.jpg)
 ## Application Design UI/UX: 
